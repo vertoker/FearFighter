@@ -287,7 +287,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1161515041}
+  - component: {fileID: 1161515045}
   - component: {fileID: 1161515042}
+  - component: {fileID: 1161515044}
+  - component: {fileID: 1161515043}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -318,13 +321,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1161515040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57cd418830f3d24d911492f3181c827, type: 3}
+  m_Script: {fileID: 11500000, guid: 9525154c3d1013a449cf4d30b436851a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1897952738}
-  _data:
-  - {fileID: 11400000, guid: 43337c160c56eee40b1f9ac986f2beac, type: 2}
-  _activeSceneNames: []
+  _chunksLoadCountX: 1
+  _chunksLoadCountY: 1
+  _sizeX: 64
+  _sizeY: 64
+  _loadManager: {fileID: 1161515043}
+  _loader: {fileID: 1161515044}
+--- !u!114 &1161515043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161515040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48fa16441e668f46a6a9dfa0d6f8955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Chunk
+--- !u!114 &1161515044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161515040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc69c7df5de32e4b85eed085b11e6e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1897952738}
+  _loadManager: {fileID: 1161515043}
+--- !u!114 &1161515045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161515040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc43e2bce1e3994f90739a168402c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 0.5
 --- !u!1 &1317242557
 GameObject:
   m_ObjectHideFlags: 0
