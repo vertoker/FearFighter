@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452df43841bcea243939f47eb7d478d8, type: 3}
+  m_Name: IMBA
+  m_EditorClassIdentifier: 
+  _stats:
+    _health: 9999
+    _speed: 9999
+    _armor: 9999
+    _damage: 9999
+    _critChance: 100
+    _critDamage: 500
