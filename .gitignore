@@ -41,6 +41,7 @@ local.properties
 *.user
 *.sln.docstates
 
+
 # Build results
 
 [Dd]ebug/
@@ -252,3 +253,10 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+# ===== #
+# Added #
+# ===== #
+*.vs/
+[Ll]ogs/
