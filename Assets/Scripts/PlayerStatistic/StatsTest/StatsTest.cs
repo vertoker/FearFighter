@@ -3,23 +3,32 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using PlayerStatisticSystem;
 
 public class StatsTest
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void StatsTestSimplePasses()
+    public void DefaultStats ()
     {
-        // Use the Assert class to test conditions
+        PlayerStatistic.SetStatistics();
+        Assert.AreEqual(0, PlayerStatistic.GetStatistic<GamesCount>().countOfGames);
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator StatsTestWithEnumeratorPasses()
+
+    [Test]
+    public void SetStats()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        List<StatisticData> stats = new List<StatisticData>() { new GamesCount() };
+        PlayerStatistic.SetStatistics(stats);
+        Assert.AreEqual(0, PlayerStatistic.GetStatistic<GamesCount>().countOfGames);
+    }
+
+    [Test]
+    public void ChangeStatsValue()
+    {
+        PlayerStatistic.SetStatistics();
+        PlayerStatistic.Trigger();
+        Assert.AreEqual(1, PlayerStatistic.GetStatistic<GamesCount>().countOfGames);
     }
 }

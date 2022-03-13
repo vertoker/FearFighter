@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-namespace PlayerStatistic
+namespace PlayerStatisticSystem
 {
     public abstract class StatisticData
     {

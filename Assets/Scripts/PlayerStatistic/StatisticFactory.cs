@@ -5,7 +5,7 @@ using System;
 using System.Xml.Linq;
 using System.IO;
 
-namespace PlayerStatistic
+namespace PlayerStatisticSystem
 {
 
     public class StatisticFactory
@@ -22,7 +22,7 @@ namespace PlayerStatistic
             GetXml(out xml);
             foreach (var item in GetTypes(xml))
             {
-                var type = Type.GetType(item);
+                var type = Type.GetType($"PlayerStatisticSystem.{item}");
                 StatisticData objToAdd = Activator.CreateInstance(type) as StatisticData;
                 if (objToAdd != null)
                     statistics.Add(objToAdd);

@@ -52,7 +52,7 @@ namespace AchievementsSystem
 			this.id = id;
 			awardAmount = award;
 			awardGot = false;
-			PlayerStatistic.StatisticData.StatisticChangedEvent += CheckAchievement;
+			PlayerStatisticSystem.StatisticData.StatisticChangedEvent += CheckAchievement;
 		}
 
 
@@ -73,7 +73,7 @@ namespace AchievementsSystem
 			if (progressFunction() == 1)
             {
 				AchievementGotEvent?.Invoke(this);
-				PlayerStatistic.StatisticData.StatisticChangedEvent -= CheckAchievement;
+				PlayerStatisticSystem.StatisticData.StatisticChangedEvent -= CheckAchievement;
 			}
         }
 	}

@@ -4,9 +4,9 @@ using UnityEngine;
 using System.Linq;
 
 
-namespace PlayerStatistic
+namespace PlayerStatisticSystem
 {
-    public class PlayerStatistic : MonoBehaviour
+    public class PlayerStatistic
     {
 
         private static List<StatisticData> _statistics;
@@ -22,14 +22,6 @@ namespace PlayerStatistic
         #endregion
         //
 
-        private void Awake()
-        {
-            if (_statistics == null)
-            {
-                _statistics = StatisticFactory.GetStatistics();
-            }
-        }
-
 
         /// <summary>
         /// Устанавливает новое значение статистик
@@ -38,6 +30,15 @@ namespace PlayerStatistic
         public static void SetStatistics(List<StatisticData> stats)
         {
             _statistics = stats;
+        }
+
+
+        /// <summary>
+        /// Устанавливет значения статистик по умолчанию
+        /// </summary>
+        public static void SetStatistics()
+        {
+            _statistics = StatisticFactory.GetStatistics();
         }
 
 
