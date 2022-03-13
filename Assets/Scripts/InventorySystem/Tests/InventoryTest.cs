@@ -10,44 +10,45 @@ public class InventoryTest
     [Test]
     public void AddToEmptyInventory()
     {
-        InventoryController.ClearInventory();
-        InventoryController.AddItem(new InventoryItem(null, "first"));
-        Assert.AreEqual(1, InventoryController.GetItemNumber("first"));
+        InventoryController inventory = new InventoryController();
+        inventory.ClearInventory();
+        inventory.AddItem(new InventoryItem(null, "first"));
+        Assert.AreEqual(1, inventory.GetItemNumber("first"));
     }
 
     [Test]
     public void AddDuplicateItems()
     {
-        InventoryController.ClearInventory();
-        InventoryController.AddItem(new InventoryItem(null, "second"));
-        InventoryController.AddItem(new InventoryItem(null, "second"));
+        InventoryController inventory = new InventoryController();
+        inventory.AddItem(new InventoryItem(null, "second"));
+        inventory.AddItem(new InventoryItem(null, "second"));
 
-        Assert.AreEqual(2, InventoryController.GetItemNumber("second"));
+        Assert.AreEqual(2, inventory.GetItemNumber("second"));
     }
 
 
     [Test]
     public void RemoveItem()
     {
-        InventoryController.ClearInventory();
-        InventoryController.AddItem(new InventoryItem(null, "third"));
+        InventoryController inventory = new InventoryController();
+        inventory.AddItem(new InventoryItem(null, "third"));
 
-        Assert.AreEqual(1, InventoryController.GetItemNumber("third"));
+        Assert.AreEqual(1, inventory.GetItemNumber("third"));
 
-        InventoryController.RemoveItem("third");
+        inventory.RemoveItem("third");
 
-        Assert.AreEqual(0, InventoryController.GetItemNumber("third"));
+        Assert.AreEqual(0, inventory.GetItemNumber("third"));
     }
 
     [Test]
     public void GetItems()
     {
-        InventoryController.ClearInventory();
+        InventoryController inventory = new InventoryController();
 
-        InventoryController.AddItem(new InventoryItem(null, "fouth"));
-        InventoryController.AddItem(new InventoryItem(null, "fouth"));
-        InventoryController.AddItem(new InventoryItem(null, "fives"));
+        inventory.AddItem(new InventoryItem(null, "fouth"));
+        inventory.AddItem(new InventoryItem(null, "fouth"));
+        inventory.AddItem(new InventoryItem(null, "fives"));
 
-        Assert.AreEqual(2, InventoryController.GetItems().Count);
+        Assert.AreEqual(2, inventory.GetItems().Count);
     }
 }

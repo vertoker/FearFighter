@@ -7,14 +7,14 @@ namespace InventorySystem
 {
     public class InventoryController
     {
-        public static Dictionary<InventoryItem, int> inventory;
+        public Dictionary<InventoryItem, int> inventory { get; private set; }
 
 
         /// <summary>
         /// Добавляет новый предмет в инвентарь
         /// </summary>
         /// <param name="item">Объект для добавления</param>
-        public static void AddItem(InventoryItem item)
+        public void AddItem(InventoryItem item)
         {
             if (inventory == null)
                 inventory = new Dictionary<InventoryItem, int>();
@@ -38,7 +38,7 @@ namespace InventorySystem
         /// Удаляет единицу предмета из инвентаря
         /// </summary>
         /// <param name="id">id предмета</param>
-        public static void RemoveItem(string id)
+        public void RemoveItem(string id)
         {
             if (inventory == null)
                 return;
@@ -65,7 +65,7 @@ namespace InventorySystem
         /// </summary>
         /// <param name="id">id предмета</param>
         /// <returns>Количество предмета</returns>
-        public static int GetItemNumber(string id)
+        public int GetItemNumber(string id)
         {
             if (inventory == null)
                 return 0;
@@ -85,7 +85,7 @@ namespace InventorySystem
         /// </summary>
         /// <typeparam name="T">Тип предмета</typeparam>
         /// <returns>Количество предмета</returns>
-        public static int GetItemNumber<T>()
+        public int GetItemNumber<T>()
             where T: InventoryItem
         {
             if (inventory == null)
@@ -101,7 +101,7 @@ namespace InventorySystem
         /// Возвращает список различных предметов в инвенторе игрока
         /// </summary>
         /// <returns></returns>
-        public static List<InventoryItem> GetItems()
+        public List<InventoryItem> GetItems()
         {
             if (inventory == null)
                 return null;
@@ -113,7 +113,7 @@ namespace InventorySystem
         /// <summary>
         /// Очищает инвентарь
         /// </summary>
-        public static void ClearInventory()
+        public void ClearInventory()
         {
             if (inventory != null)
                 inventory.Clear();
