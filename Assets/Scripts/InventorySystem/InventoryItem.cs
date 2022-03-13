@@ -8,7 +8,7 @@ namespace InventorySystem
 {
     public class InventoryItem
     {
-        private Action usingFunction;   // Функция использования
+        protected Action usingFunction;   // Функция использования
 
         public string id { get; private set; }
 
