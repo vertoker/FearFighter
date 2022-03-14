@@ -2,14 +2,14 @@ using UnityEngine.Events;
 using UnityEngine;
 using Core.Loop;
 
-namespace Core.Animation
+namespace Core.Animation.Sprites
 {
-    [CreateAssetMenu(fileName = "New Animation", menuName = "Animations/Basic")]
-    public class Basic : Animation
+    [CreateAssetMenu(fileName = "New Animation", menuName = "Animations/Sprite")]
+    public class Animation : FrameAnimation
     {
         [SerializeField] private Sprite[] _sprites;
 
-        public override Sprite Get(double time)// Проверить работоспособность
+        public override object Get(double time)
         {
             long frame = (long)(time * FPS);
             //Debug.Log(string.Join(" ", frame, _sprites.Length));

@@ -1,6 +1,7 @@
 using Core.Entities.Controllers;
+using Core.Animation.Transforms;
+using Core.Animation.Sprites;
 using Core.Input.Keys;
-using Core.Animation;
 using UnityEngine;
 
 namespace Core.Entities.AnimationController

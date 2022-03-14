@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Core.Animation
 {
-    public class Animation : ScriptableObject
+    public class FrameAnimation : ScriptableObject
     {
         [SerializeField] private string _name;
         [SerializeField] private int _fps;
@@ -10,9 +10,9 @@ namespace Core.Animation
         public string Name => _name;
         public int FPS => _fps;
 
-        public virtual Sprite Get(double time)
+        public virtual object Get(double time)
         {
-            return null;
+            return default(object);
         }
     }
 }

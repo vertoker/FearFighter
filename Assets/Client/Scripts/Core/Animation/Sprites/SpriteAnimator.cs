@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Animation
+namespace Core.Animation.Sprites
 {
     public class SpriteAnimator : MonoBehaviour
     {
@@ -36,7 +36,7 @@ namespace Core.Animation
         private void UpdateSprite(double time)
         {
             currentTime = time;
-            _renderer.sprite = _current.Get(currentTime - startTime);
+            _renderer.sprite = (Sprite)_current.Get(currentTime - startTime);
         }
     }
 }
