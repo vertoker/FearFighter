@@ -1,5 +1,6 @@
 using Core.Entities.Controllers;
 using Core.Animation.Transforms;
+using Core.Fighting.Controllers;
 using Core.Animation.Sprites;
 using Core.Input.Keys;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Core.Entities.AnimationController
 {
     public class PlayerAnimationController : MonoBehaviour
     {
+        [SerializeField] private PlayerController _fighter;
         [SerializeField] private SpriteAnimator _animator;
         [SerializeField] private SpriteRenderer _renderer;
         private Vector2 _lastDirection;
@@ -54,6 +56,7 @@ namespace Core.Entities.AnimationController
         public void SetFlip(bool isLeft)
         {
             _renderer.flipX = isLeft;
+            _fighter.SetFlip(isLeft);
         }
     }
 

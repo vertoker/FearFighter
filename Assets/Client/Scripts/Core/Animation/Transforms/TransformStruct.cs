@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Core.Animation.Transforms
 {
+    [System.Serializable]
     public struct TransformStruct
     {
         [SerializeField] private Vector3 _position;
@@ -14,14 +15,14 @@ namespace Core.Animation.Transforms
 
         public void CopyFrom(Transform transform)
         {
-            _position = transform.position;
-            _rotation = transform.rotation;
+            _position = transform.localPosition;
+            _rotation = transform.localRotation;
             _localScale = transform.localScale;
         }
         public void CopyTo(Transform transform)
         {
-            transform.position = _position;
-            transform.rotation = _rotation;
+            transform.localPosition = _position;
+            transform.localRotation = _rotation;
             transform.localScale = _localScale;
         }
     }

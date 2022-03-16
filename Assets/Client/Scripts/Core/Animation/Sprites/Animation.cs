@@ -1,6 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 using Core.Loop;
+using Common;
 
 namespace Core.Animation.Sprites
 {
@@ -13,7 +14,7 @@ namespace Core.Animation.Sprites
         {
             long frame = (long)(time * FPS);
             //Debug.Log(string.Join(" ", frame, _sprites.Length));
-            return _sprites[frame % _sprites.Length];
+            return Loop ? _sprites[frame % _sprites.Length] : _sprites[Functions.Clamp(frame, 0, _sprites.Length - 1)];
         }
     }
 }
