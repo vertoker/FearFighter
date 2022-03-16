@@ -37,7 +37,7 @@ namespace Core.Animation.Transforms
         private void UpdateTransform(double time)
         {
             currentTime = time;
-            ((TransformStruct)_current.Get(currentTime - startTime)).CopyTo(_transform);
+            _current.Get(currentTime - startTime).CopyTo(_transform);
         }
 }
 }

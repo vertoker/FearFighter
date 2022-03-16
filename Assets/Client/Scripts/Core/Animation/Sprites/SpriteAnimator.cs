@@ -36,7 +36,7 @@ namespace Core.Animation.Sprites
         private void UpdateSprite(double time)
         {
             currentTime = time;
-            _renderer.sprite = (Sprite)_current.Get(currentTime - startTime);
+            _renderer.sprite = _current.Get(currentTime - startTime);
         }
     }
 }

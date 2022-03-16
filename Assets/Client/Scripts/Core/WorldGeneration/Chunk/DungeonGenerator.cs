@@ -16,9 +16,11 @@ namespace Core.WorldGeneration
         [SerializeField] private int _wallsIterations = 2;
         [SerializeField] private int _holeSize = 2;
         [Range(0f, 1f)] [SerializeField] private float _chanceCorners = 0.25f;
+        private FastNoise _fastNoise;
 
         public override void Generate(ChunkContext context, Tilemap[] tilemaps)
         {
+            _fastNoise = new FastNoise(666);
             Tilemap tilemap = tilemaps[1];
             List<Room> rooms = RoomGenerator(context.GetMinPosition(), context.GetMaxPosition());
             List<Vector3Int> positions = new List<Vector3Int>();

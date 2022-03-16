@@ -19,7 +19,7 @@ namespace Core.Animation.Transforms
         public int idSelect = 0;
 #endif
 
-        public override object Get(double time)
+        public TransformStruct Get(double time)
         {
             long frame = (long)(time * FPS);
             //Debug.Log(string.Join(" ", frame, _points.Length));

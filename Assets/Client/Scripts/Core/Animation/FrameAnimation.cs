@@ -19,10 +19,5 @@ namespace Core.Animation
             get { return _loop; }
             set { _loop = value; }
         }
-
-        public virtual object Get(double time)
-        {
-            return default(object);
-        }
     }
 }

@@ -10,7 +10,7 @@ namespace Core.Animation.Sprites
     {
         [SerializeField] private Sprite[] _sprites;
 
-        public override object Get(double time)
+        public Sprite Get(double time)
         {
             long frame = (long)(time * FPS);
             //Debug.Log(string.Join(" ", frame, _sprites.Length));
