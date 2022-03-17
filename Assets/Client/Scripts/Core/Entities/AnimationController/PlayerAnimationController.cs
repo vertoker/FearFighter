@@ -9,7 +9,7 @@ namespace Core.Entities.AnimationController
 {
     public class PlayerAnimationController : MonoBehaviour
     {
-        [SerializeField] private PlayerController _fighter;
+        [SerializeField] private FightingController _fighter;
         [SerializeField] private SpriteAnimator _animator;
         [SerializeField] private SpriteRenderer _renderer;
         private Vector2 _lastDirection;

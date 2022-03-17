@@ -220,7 +220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animations:
   - {fileID: 11400000, guid: 0472efee5fa99a043b3e5cc6ecbca14d, type: 2}
-  _current: {fileID: 11400000, guid: 0472efee5fa99a043b3e5cc6ecbca14d, type: 2}
+  - {fileID: 11400000, guid: ff5e3e9f344c0134a9e0d60d1075bc8a, type: 2}
+  - {fileID: 11400000, guid: a435615d3263feb44866dc50ba824537, type: 2}
+  _current: {fileID: 11400000, guid: 790c9aba7dc63cb4a9cdee868c05d69c, type: 2}
   _transform: {fileID: 114455612}
 --- !u!1 &246305811
 GameObject:
@@ -386,9 +388,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1060212406}
-  - component: {fileID: 1060212408}
+  - component: {fileID: 1060212407}
   m_Layer: 0
-  m_Name: Weapons
+  m_Name: Fists
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +412,7 @@ Transform:
   m_Father: {fileID: 1897952738}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060212408
+--- !u!114 &1060212407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,7 +421,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060212405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbba1e2537f3fb42b13823ea1d1b382, type: 3}
+  m_Script: {fileID: 11500000, guid: aaaa8f8dcd967444fae6fc0d90d9ae31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _fistLeftObject: {fileID: 114455611}
@@ -818,6 +820,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animations:
   - {fileID: 11400000, guid: 790c9aba7dc63cb4a9cdee868c05d69c, type: 2}
+  - {fileID: 11400000, guid: 230a68efa4d36b74abb99be790808aab, type: 2}
+  - {fileID: 11400000, guid: 5e8d6a9102eacf641adb7fc1b3158ea9, type: 2}
   _current: {fileID: 11400000, guid: 790c9aba7dc63cb4a9cdee868c05d69c, type: 2}
   _transform: {fileID: 1813440690}
 --- !u!1 &1897952736
@@ -1009,6 +1013,11 @@ MonoBehaviour:
     worldInteraction: 1
     fighting: 0
     switchWeapon: 0
+  - _block: {fileID: 1060212407}
+    movement: 1
+    worldInteraction: 1
+    fighting: 1
+    switchWeapon: 1
 --- !u!114 &1897952744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,6 +1048,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d751d9259aadc94691ab55d70f7e9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fighter: {fileID: 1060212408}
+  _fighter: {fileID: 1060212407}
   _animator: {fileID: 1897952744}
   _renderer: {fileID: 1897952739}

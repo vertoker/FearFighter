@@ -33,8 +33,11 @@ namespace Core.Entities.Movement
 
         public override void Move(Vector2 direction)
         {
-            _direction = direction;
-            _animator.Move(direction);
+            if (!_isDash)
+            {
+                _direction = direction;
+                _animator.Move(direction);
+            }
             UpdateMovement();
         }
         public override void Press(KeyWorldInteraction key)
